@@ -1,0 +1,27 @@
+.header-style{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+#myScore{
+    padding: 8px;
+    width: fit-content;
+    border: 1px solid black;
+    text-align: center;
+    font-size: 30px;
+    display: inline-block;
+    border-radius: 20px;
+}
+
+#question-section{
+    margin: 25px;
+}
+
+.question{
+    border:  3px solid blue;
+    padding: 15px;
+    background-color: lightblue;
+    margin-top: 5px;
+    border-radius: 25px;
+}

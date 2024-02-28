@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>forms</title>
+    </head>
+    <body>
+        <form action="" name="myForm" onsubmit="return myFunc()">
+            <label for="fullName">Name : </label>
+            <input type="text" name="fullName" id="fullName"><br>
+            <label for="vehicle">Select vehicle : </label>
+            <input type="radio" name="vehicleType" id="car" value="Car">
+            <label for="car">Car</label>
+            <input type="radio" name="vehicleType" id="Bike" value="Bike">
+            <label for="Bike">Bike</label><br>
+            <label for="hobby">User's hobbies : </label><br>
+            Movies : <input type="checkbox" id="movie" name="hobby" value="Movies"><br>
+            Travelling : <input type="checkbox" id="travel" name="hobby" value="Travel"><br>
+
+            <label for="pwd">password : </label>
+            <input type="password" id="pwd" name="pwd"><br>
+            
+            <label for="age">Age</label>
+            <input type="number" id="age" name="age">
+
+            <br><br>
+            <input type="submit" value="Send data"><br>
+
+            <p id="myName"></p>
+            <p id="myVehicle"></p>
+            <p id="myHobby"></p>
+
+        </form>
+        <script src="script.js"></script>
+    </body>
+</html>

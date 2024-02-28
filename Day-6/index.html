@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+</head>
+<body onload="return myload()">
+    <!--getElementById -->
+    <button onclick="document.getElementById('text').innerHTML = 'I am Ritvik'">change text</button>
+    <button onclick="document.getElementById('text2').style.color = 'red'">change color</button>
+
+    <!-- getElementByTagName -->
+    <p id="text">Hello Everyone</p>
+    <p id="text2">text after change color.</p>
+    <p id="show"></p>
+    <p id="change">Hello world</p>
+    <button onclick="myfunc()">click</button>
+    <!-- it will give collections of mentioned tag (kind of array/we can access it as array)-->
+
+
+    <!-- getElementByClassName -->
+    <p class="head">first para</p>
+    <p class="head">second para</p>
+    <p class="head">third para</p>
+    <button onclick="myfunc2()">click me</button>
+    <p id="len"></p>
+    <p id="print"></p>
+
+    <!--there are many more methods such them
+        .e.g document.forms['forms Id']
+            document.anchors['anchor Id']
+            document.write() -->
+
+   <!-- document.write() -->
+   <button onclick="myfunc3()">click</button>
+
+   <!-- EVENTS -->
+   <!-- onclick(), onload(), onmouserover(), onmouseout(), etc. -->
+   <div onmouseover="mouseOver(this)" onmouseout="mouseOut(this)">cursor is out from element</div>
+   <!-- here we are using 'this' keyword which will referr  the element 
+        which is being called-->
+   
+    <!-- Event Listener's -->
+    <button id="mybtn">If you are new user then click here </button>
+    <p id="details"></p>
+    <button id="closeBtn"></button>
+
+
+
+
+    <script src="script (1).js"></script>
+</body>
+</html>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<head>
+    <title>BOM</title>
+</head>
+<body>
+    <button onclick="myfunc1()">Click me</button>
+    <button onclick="stop()">stop</button>
+    <button onclick="myfunc2()">show</button>
+    <p id="text"></p>
+    <p id="show"></p>
+    <script>
+        //POP-UPS
+        let age = prompt("enter your age");
+        if(age > 18){
+            alert("You are good to go");
+        }
+
+        let res = confirm("Do you want to go!!");
+        if(res){
+            let name = prompt("Verify, your name");
+            if(name === "Ritvik"){
+                alert("Hi, "+name+" welcome onboard");
+            }
+        }
+
+        //TIMERS
+        //If we want to perform js code on browser in certain time frame then we can use
+        //timers-
+        //setTimeout, clearTimeout, setInterval, clearInterval
+        //setTimeout ->it will execute js code after specific time frame (only once)
+        //setInterval -> it will keep executing js code after specific time frame (loop)
+
+        //setTimeout()
+        var mytime;
+        function myfunc1(){ 
+            mytime = setTimeout(function(){  
+                document.getElementById('text').innerHTML = "Hey Ritvik.";
+            }, 3000);
+        }
+        //here we are printing a text after 2seconds by using setTimeout methods
+        //in which we have to pass two parameter first is callback function which execute our task
+        //second is timeout value
+
+        //now if we want to break that timeout/ time frame which after our text is rendering
+        //so we can use clearTimeout()
+
+        function stop(){
+            clearTimeout(mytime);
+        }
+        //so like that we can break out set timeout using clearTimeout()
+
+
+        //setInterval()
+        // function myfunc2(){
+        //     var count = 0;
+        //     setInterval(function(){
+        //         count++;
+        //         document.getElementById('show').innerHTML = count;
+        //     },1000);
+        // }
+        //here we are just increasing value of count by one after every 1 second and then showing
+        //to achieve that we used here setInterval(), in which passed two parameters 
+        //first is callback() which execute our task, second is timeinterval value
+        //that will work as infinite loop
+
+        //so to break that loop we have clearInterval()
+        function myfunc2(){
+            var count = 0;
+            let interval = setInterval(function(){
+                count++;
+                document.getElementById('show').innerHTML = count;
+                if(count === 5){
+                    clearInterval(interval); 
+                }
+            },1000);
+        }
+        //here we are calling a setInterval() in a variable and using it to stop interval loop
+        //by using clearInterval()
+    </script>
+</body>
+</html>

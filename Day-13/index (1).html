@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>API Integration</title>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <!-- to use axios() we need to import that library -->
+  </head>
+  <body>
+    <div>
+      <button onclick="CallAPI()">fetch data by promises</button>
+      <button onclick="CallAPIAgain()">fetch data by async/await</button>
+      <button onclick="CallAPIByAxios()">fetch data by axios</button>
+    </div>
+    <script>
+      //API integration
+      //If we want to add or integrate any api to our page then we need to get/call it.
+      //and to do that we have three options
+      //#1 - fetch() ->{can do that using promises or async/await}
+      //#2 - axios()
+      //#3 - XMLhttpRequest
+
+      //#1 fetch()
+
+      const url = "https://randomuser.me/api/?results=12"; //public api
+
+      CallAPI = () => {
+        // fetch(url).then(() => console.log(res)).catch((err) => console.log(err));    //if we do this only then we will not able get exact json data of fetched api
+        //by following above approch we will get the object of response but to get actuall json data we need to follow two imp. steps-
+        //step-1 fetch the response from API
+        //step-2 convert it into json data using .json()
+        fetch(url)
+          .then((res) => {
+            return res.json();
+          }) //here we are using json() which will convert the default fetched response object into json data, which is a async operation and after returning then only it will resolved untill it will pending
+          .then((data) => console.log(data)) //and here we are using that json data  //data = res.json()
+          .catch((err) => console.log(err));
+      };
+
+      //same thing with async/await
+      async function CallAPIAgain() {
+        const res = await fetch(url); //here we are fetching the data
+        const data = await res.json(); //now converting the get response object into json data
+        console.log(data); //using json data
+      }
+      //we need to use async and await keywords in proper way and in same place which I used in above example
+
+      //#2 axios()
+
+      function CallAPIByAxios() {
+        axios
+          .get(url)
+          .then((res) => console.log(res))
+          .catch((err) => console.log(err));
+      }
+
+      //benefits -> we dont need to convert response into json explicitly, axios() will convert automatically and return it
+      //we can get status code and response status request also.
+
+      //#3 XMLhttpRequst()
+      //this is the traditional approach
+      //which generally not being used anymore
+      //example
+
+      // let request = new XMLHttpRequest();
+      // request.on("GET", "index.html");
+      // request.onload = function(){
+      //     request.response[]
+      // }
+      // request.send();
+    </script>
+  </body>
+</html>
